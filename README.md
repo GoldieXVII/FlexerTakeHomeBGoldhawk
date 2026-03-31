@@ -18,7 +18,7 @@ survey-frontend/
 ## Running the API
 
 ### Prerequisites
-- [.NET 8 SDK](https://dotnet.microsoft.com/download)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
 
 ### Steps
 
