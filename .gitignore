@@ -1,0 +1,28 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio
+.vs/
+.vscode/
+*.sln.iml
+*.user
+*.userosscache
+
+# User-specific files
+.DS_Store
+*.suo
+*.VC.db
+
+# NuGet
+packages/
+.nuget/
+*.nupkg
+*.snupkg
+
+# Local environment
+.env
+appsettings.local.json

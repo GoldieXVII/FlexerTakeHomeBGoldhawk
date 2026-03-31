@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Survey</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-blob b1"></div>
+  <div class="bg-blob b2"></div>
+
+  <main class="container">
+
+    <header class="survey-header">
+      <div class="tag">2024 · ANNUAL</div>
+      <h1 class="title">Pulse<br/><em>Survey</em></h1>
+      <p class="subtitle">Tell us about your work life. Honest answers help us build a better workplace.</p>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+        <span class="progress-label" id="progressLabel">0 / 12 completed</span>
+      </div>
+    </header>
+
+    <div class="card" id="loadingCard">
+      <div class="spinner"></div>
+      <p class="loading-text">Loading your survey…</p>
+    </div>
+
+    <form id="surveyForm" class="survey-form hidden" novalidate>
+
+      <!-- Fixed fields -->
+      <section class="fixed-section">
+        <div class="section-label">REQUIRED IDENTITY FIELDS</div>
+
+        <div class="field-group" id="fg-email">
+          <label class="field-label" for="email">
+            Email Address <span class="req">*</span>
+          </label>
+          <input class="field-input" type="email" id="email" name="email"
+                 placeholder="you@example.com" autocomplete="email" />
+          <span class="field-error" id="err-email"></span>
+        </div>
+
+        <div class="field-group" id="fg-idNumber">
+          <label class="field-label" for="idNumber">
+            ID Number <span class="req">*</span>
+          </label>
+          <input class="field-input" type="text" id="idNumber" name="idNumber"
+                 placeholder="e.g. 9001015009087" maxlength="20" />
+          <span class="field-hint">Minimum 6 characters — letters and digits only</span>
+          <span class="field-error" id="err-idNumber"></span>
+        </div>
+      </section>
+
+      <!-- Dynamic questions here -->
+      <section class="questions-section" id="questionsSection">
+        <div class="section-label">SURVEY QUESTIONS</div>
+        <div id="questionsList"></div>
+      </section>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-reset" id="resetBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Reset
+        </button>
+        <button type="submit" class="btn btn-submit" id="submitBtn">
+          Submit Survey
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- Success section -->
+    <div class="success-card hidden" id="successCard">
+      <div class="success-icon">✓</div>
+      <h2>Thank you!</h2>
+      <p>Your responses have been recorded. Check the browser console for the full submission log.</p>
+      <button class="btn btn-submit" id="startOverBtn">Start Over</button>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
